@@ -1,6 +1,8 @@
 import { covertDateFormat } from '../../consts';
+import { AppContext } from '../../context/context';
 
 const ListItem = ({ user }, key) => {
+  const { deleteUser, users } = React.useContext(AppContext);
   const date = covertDateFormat(user.registration_date);
 
   return (
@@ -11,7 +13,12 @@ const ListItem = ({ user }, key) => {
         {date.day}.{date.month}.{date.year}
       </span>
       <span className="users-list__item-rating">{user.rating}</span>
-      <button className="users-list__item-button" type="button">
+      <button
+        className="users-list__item-button"
+        type="button"
+        onClick={() => {
+          deleteUser(user);
+        }}>
         &times;
       </button>
     </li>

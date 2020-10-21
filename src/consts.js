@@ -1,4 +1,8 @@
 export const URL = 'https://5ebbb8e5f2cfeb001697d05c.mockapi.io/users';
+export const SortTypes = {
+  DATE: 'date',
+  RATE: 'rate',
+};
 
 const getDate = (date) => {
   const day = new Date(date).getDate();
