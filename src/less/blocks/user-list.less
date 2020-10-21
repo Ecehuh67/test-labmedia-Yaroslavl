@@ -1,0 +1,44 @@
+.users-list {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 5px;
+
+  border: 1px solid red;
+  background-color: white;
+}
+
+.users-list__item {
+  display: flex;
+  justify-content: space-between;
+
+  &:first-of-type {
+    margin-bottom: 15px;
+
+    color: grey;
+  }
+}
+
+.users-list__item-name {
+  width: 25%;
+}
+
+.users-list__item-email {
+  width: 40%;
+}
+
+.users-list__item-date {
+  width: 20%;
+}
+
+.users-list__item-rating {
+  width: 10%;
+}
+
+.users-list__item-button {
+  width: 5%;
+}
+
+.users-list__item-button--head {
+  font-size: 0;
+}

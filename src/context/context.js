@@ -1,11 +1,11 @@
 const AppContext = React.createContext(null);
 
 const ChatProvider = (props) => {
-  const [isAuth, setAuth] = React.useState(false);
+  const [users, setUsers] = React.useState([]);
 
   const sampleAppContext = {
-    isAuth,
-    setAuth,
+    users,
+    setUsers,
   };
 
   return (
