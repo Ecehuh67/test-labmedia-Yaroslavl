@@ -5,7 +5,7 @@ const Warning = ({ setWarning, warning }) => {
 
   return (
     <section className="main__warning-wrapper">
-      <div className="main__warning-container html-wrapper">
+      <div className="main__warning-container">
         <p className="main__warning-caption">
           Are you sure you want to delete {warning.user.username}?
         </p>
@@ -16,8 +16,7 @@ const Warning = ({ setWarning, warning }) => {
             onClick={() => {
               deleteUser(warning.user);
               setWarning({ isShown: false, user: {} });
-            }}
-          >
+            }}>
             Ok
           </button>
           <button
@@ -25,8 +24,7 @@ const Warning = ({ setWarning, warning }) => {
             type="button"
             onClick={() => {
               setWarning({ isShown: false, user: {} });
-            }}
-          >
+            }}>
             Cancel
           </button>
         </div>
