@@ -12,8 +12,10 @@ const App = () => {
     setFilteredUsers,
     shownUsers,
     filteredUsers,
+    fieldFilter,
   } = React.useContext(AppContext);
 
+  // Get users from an API
   React.useEffect(() => {
     fetch(URL)
       .then((res) => res.json())
@@ -23,13 +25,19 @@ const App = () => {
       });
   }, []);
 
-  React.useEffect(() => {
-    setFilteredUsers(users);
-  }, [users]);
-
   return (
     <main className="html-wrapper">
-      <h1 className="main__caption">Users list</h1>
+      <h1 className="main__caption">
+        Users list (
+        {!fieldFilter.isActive
+          ? filteredUsers.length > shownUsers
+            ? shownUsers
+            : filteredUsers.length
+          : shownUsers > filteredUsers.length
+          ? filteredUsers.length
+          : shownUsers}
+        /{!fieldFilter.isActive ? users.length : filteredUsers.length})
+      </h1>
 
       <Filters />
       <Sorting />

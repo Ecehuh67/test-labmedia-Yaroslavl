@@ -12,8 +12,10 @@ const Filters = () => {
     shownUsers,
   } = React.useContext(AppContext);
 
+  // Control the input
   const [inputValue, setInputValue] = React.useState('');
 
+  // Define when a reset button will be availiable
   const isResetActive = !!(
     dateFiler.isActive ||
     rateFiler.isActive ||
@@ -33,6 +35,8 @@ const Filters = () => {
           value={inputValue}
           onChange={({ target }) => {
             const { value } = target;
+
+            // Get filtered users according to a value of input
             const sortedByName = users
               .slice()
               .filter((el, i) =>
@@ -45,15 +49,19 @@ const Filters = () => {
                 el.email.toLowerCase().includes(value.toLowerCase())
               )
               .slice(0, shownUsers);
+
+            // Set input value
             setInputValue(value);
 
             setFieldFilter({ isActive: true });
 
             setFilteredUsers(() => {
+              // return original users array
               if (!value) {
                 setFieldFilter({ isActive: false });
                 return users;
               } else {
+                // combine filtered arrays
                 return sortedByName.concat(sortedByEmail);
               }
             });

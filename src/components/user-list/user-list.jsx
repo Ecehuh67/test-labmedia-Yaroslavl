@@ -5,6 +5,8 @@ import { AppContext } from '../../context/context';
 
 const UserList = () => {
   const { filteredUsers, shownUsers } = React.useContext(AppContext);
+
+  // modal window which must be showm before user has been deleted
   const [warning, setWarning] = React.useState({ isShown: false, user: {} });
 
   return (
