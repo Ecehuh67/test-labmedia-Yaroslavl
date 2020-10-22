@@ -1,0 +1,41 @@
+.main__sorting-wrapper {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5px 15px;
+}
+
+.main__sorting-caption {
+  margin-right: 20px;
+
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.main__sorting-button {
+  height: 25px;
+
+  font-size: 15px;
+
+  color: gray;
+
+  border: none;
+  border-bottom: 1px dashed gray;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:first-of-type {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: #7f7fd5;
+    border-bottom: 1px dashed #7f7fd5;
+  }
+}
+
+.main__sorting-button--active {
+  color: black;
+  border-bottom: 1px dashed black;
+}

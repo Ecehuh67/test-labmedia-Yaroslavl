@@ -1,9 +1,9 @@
 import '../../less/style.less';
-import { AppContext } from '../../context/context';
-import { URL } from '../../consts';
 import UserList from '../user-list/user-list';
 import Sorting from '../sorting/sorting';
 import Filters from '../filters/filters';
+import { AppContext } from '../../context/context';
+import { URL } from '../../consts';
 
 const App = () => {
   const {

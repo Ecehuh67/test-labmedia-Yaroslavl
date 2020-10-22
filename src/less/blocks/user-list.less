@@ -6,20 +6,28 @@
 
   background-color: white;
   border-radius: 5px;
+  box-shadow: 10px 10px 5px 0px rgba(219, 216, 216, 0.75);
 }
 
 .users-list__item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 0;
+
+  min-height: 30px;
 
   &:first-of-type {
-    margin-bottom: 15px;
-
     color: grey;
   }
 
   &:not(:last-of-type) {
-    margin-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  &:last-of-type {
+    padding: 20px 0;
   }
 }
 
@@ -69,7 +77,6 @@
 .users-list__item--show-more {
   box-sizing: border-box;
   padding: 5px;
-  margin-bottom: 10px;
 
   width: 100%;
 
@@ -77,6 +84,7 @@
   border: none;
   outline: none;
   background-color: rgba(211, 211, 211, 1);
+  cursor: pointer;
 
   &:hover {
     background-color: lightgreen;

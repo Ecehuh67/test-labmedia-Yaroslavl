@@ -3,11 +3,7 @@ import { AppContext } from '../../context/context';
 
 const Sorting = () => {
   const {
-    setUsers,
-    users,
-    setFilteredUsers,
     sortBy,
-    filteredUsers,
     setDateFilter,
     dateFiler,
     setRateFilter,
@@ -16,7 +12,11 @@ const Sorting = () => {
 
   return (
     <div className="main__sorting-wrapper">
+      <h2 className="main__sorting-caption">Sorting:</h2>
       <button
+        className={`main__sorting-button ${
+          dateFiler.isActive ? 'main__sorting-button--active' : ''
+        }`}
         type="button"
         onClick={() => {
           setDateFilter((prev) => {
@@ -27,10 +27,14 @@ const Sorting = () => {
             };
           });
           sortBy(SortTypes.DATE);
-        }}>
+        }}
+      >
         Registration date
       </button>
       <button
+        className={`main__sorting-button ${
+          rateFiler.isActive ? 'main__sorting-button--active' : ''
+        }`}
         type="button"
         onClick={() => {
           setRateFilter((prev) => {
@@ -41,7 +45,8 @@ const Sorting = () => {
             };
           });
           sortBy(SortTypes.RATE);
-        }}>
+        }}
+      >
         Rating
       </button>
     </div>

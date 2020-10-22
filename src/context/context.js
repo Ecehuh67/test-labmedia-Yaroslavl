@@ -11,9 +11,9 @@ const ChatProvider = (props) => {
     value: false,
   };
 
+  //
   const [fieldFilter, setFieldFilter] = React.useState(initialFilterValue);
   const [dateFiler, setDateFilter] = React.useState(initialFilterValue);
-
   const [rateFiler, setRateFilter] = React.useState(initialFilterValue);
 
   const deleteUser = (user) => {
@@ -72,19 +72,19 @@ const ChatProvider = (props) => {
 
   const sampleAppContext = {
     users,
-    setUsers,
     filteredUsers,
+    dateFiler,
+    rateFiler,
+    fieldFilter,
+    shownUsers,
+    setUsers,
     setFilteredUsers,
     deleteUser,
     sortBy,
     setDateFilter,
     setRateFilter,
-    dateFiler,
-    rateFiler,
     resetSortBy,
     setFieldFilter,
-    fieldFilter,
-    shownUsers,
     setShown,
   };
 

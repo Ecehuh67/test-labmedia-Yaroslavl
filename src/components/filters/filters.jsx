@@ -2,12 +2,8 @@ import { AppContext } from '../../context/context';
 
 const Filters = () => {
   const {
-    setUsers,
     users,
     setFilteredUsers,
-    sortByIncrease,
-    filteredUsers,
-    setDateFilter,
     resetSortBy,
     dateFiler,
     rateFiler,
