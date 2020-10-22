@@ -1,9 +1,10 @@
-import { SortTypes } from '../consts';
+import { SortTypes, SHOWN_USERS } from '../consts';
 const AppContext = React.createContext(null);
 
 const ChatProvider = (props) => {
   const [users, setUsers] = React.useState([]);
   const [filteredUsers, setFilteredUsers] = React.useState([]);
+  const [shownUsers, setShown] = React.useState(SHOWN_USERS);
 
   const initialFilterValue = {
     isActive: false,
@@ -23,8 +24,6 @@ const ChatProvider = (props) => {
       copiedUsers.splice(userIndex, 1);
       return copiedUsers;
     });
-
-    setFilteredUsers(users);
   };
 
   const sortBy = (str) => {
@@ -85,6 +84,8 @@ const ChatProvider = (props) => {
     resetSortBy,
     setFieldFilter,
     fieldFilter,
+    shownUsers,
+    setShown,
   };
 
   return (

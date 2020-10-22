@@ -3,6 +3,7 @@ export const SortTypes = {
   DATE: 'date',
   RATE: 'rate',
 };
+export const SHOWN_USERS = 5;
 
 const getDate = (date) => {
   const day = new Date(date).getDate();
